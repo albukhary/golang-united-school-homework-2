@@ -10,23 +10,28 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-
 type SideNum int
+
+var (
+	SidesTriangle SideNum = 3
+	SidesSquare   SideNum = 4
+	SidesCircle   SideNum = 0
+)
 
 func CalcSquare(sideLen float64, sidesNum SideNum) float64 {
 	var (
-		area float64
-		squaredSide = sideLen*sideLen
-	) 
+		area        float64
+		squaredSide = sideLen * sideLen
+	)
 
 	switch sidesNum {
 	case 0:
-		area = math.Pi*squaredSide
+		area = math.Pi * squaredSide
 	case 3:
-		area = math.Sqrt(3)/4*squaredSide
+		area = math.Sqrt(3) / 4 * squaredSide
 	case 4:
 		area = squaredSide
 	}
-	
+
 	return area
 }
